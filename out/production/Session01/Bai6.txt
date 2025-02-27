@@ -1,0 +1,67 @@
+**JDK, JRE và JVM có vai trò gì trong hệ sinh thái Java? Hãy phân biệt sự khác nhau giữa ba khái niệm này và nêu mối quan hệ giữa chúng
+1. JDK (Java Development Kit) – Bộ công cụ phát triển Java
+Chức năng: Dùng để phát triển ứng dụng Java.
+Vai trò: Giúp lập trình viên viết, biên dịch và chạy chương trình Java.
+
+2. JRE (Java Runtime Environment) – Môi trường chạy Java
+Chức năng: Cung cấp môi trường để chạy ứng dụng Java.
+Vai trò: Nếu chỉ cần chạy ứng dụng Java (không cần phát triển), chỉ cần JRE.
+
+3. JVM (Java Virtual Machine) – Máy ảo Java
+Chức năng: Chạy mã bytecode (.class).
+Vai trò: Đảm bảo Java chạy trên nhiều nền tảng khác nhau theo nguyên tắc "Write Once, Run Anywhere".
+
+-- Mối quan hệ giữa JDK, JRE và JVM
+JVM là phần cốt lõi chạy chương trình Java.
+JRE chứa JVM + thư viện hỗ trợ chạy Java.
+JDK chứa JRE + công cụ phát triển Java.
+
+
+** Hãy giải thích khái niệm "Write once, run anywhere" trong Java. Cơ chế nào giúp Java có thể chạy trên nhiều nền tảng khác nhau mà không cần biên dịch lại?
+Khái niệm "Write Once, Run Anywhere" trong Java:
+Cụm từ "Write Once, Run Anywhere" (WORA) nghĩa là bạn chỉ cần viết mã Java một lần và có thể chạy trên nhiều nền tảng (Windows, macOS, Linux...) mà không cần biên dịch lại.
+Điều này giúp Java trở thành một trong những ngôn ngữ lập trình phổ biến nhất, đặc biệt trong các ứng dụng doanh nghiệp và đa nền tảng.
+Cơ chế giúp Java chạy trên nhiều nền tảng
+- JVM (Java Virtual Machine) – Máy ảo Java
+
+Khi lập trình viên viết mã Java (.java), trình biên dịch Javac sẽ biên dịch nó thành bytecode (.class).
+Bytecode này không phụ thuộc vào hệ điều hành hay phần cứng mà chỉ cần JVM để chạy.
+Mỗi hệ điều hành có một phiên bản JVM riêng, giúp chương trình Java có thể chạy trên mọi nền tảng.
+- Vai trò của JVM trong WORA
+
+JVM đóng vai trò trung gian giữa chương trình Java và hệ điều hành.
+Nhờ cơ chế này, lập trình viên không cần biên dịch lại mã nguồn khi chạy trên các hệ điều hành khác nhau.
+
+** Quy trình để cài đặt và chạy chương trình Java đầu tiên bằng IntelliJ IDEA như thế nào? Hãy mô tả các bước cần thực hiện để tạo và chạy một dự án Java cơ bản.
+1. Cài đặt phần mềm cần thiết
+2. Tạo dự án Java mới trong IntelliJ IDEA
+3. Viết chương trình Java đơn giản
+4. Chạy chương trình Java
+5. Kiểm tra kết quả
+
+** Java có những phiên bản nào? Hãy phân biệt Java SE, Java EE và Java ME về mục đích sử dụng và đối tượng hướng đến
+1. Java SE (Standard Edition) – Java tiêu chuẩn
+- Mục đích sử dụng
+Dùng để phát triển ứng dụng Java cơ bản, ứng dụng desktop, ứng dụng console.
+Cung cấp các thư viện cốt lõi như java.lang, java.util, java.io, java.net, v.v.
+Hỗ trợ lập trình hướng đối tượng, đa luồng, xử lý ngoại lệ, v.v.
+- Đối tượng hướng đến
+Dành cho lập trình viên phát triển ứng dụng Java thông thường.
+Ứng dụng trong phần mềm desktop, công cụ lập trình, ứng dụng nhỏ chạy trên máy tính.
+
+2. Java EE (Jakarta EE – Enterprise Edition) – Java doanh nghiệp
+- Mục đích sử dụng
+Phát triển các ứng dụng web, ứng dụng doanh nghiệp lớn.
+Hỗ trợ các công nghệ như Servlet, JSP, EJB, JPA, JMS, Web Services.
+Tích hợp với các hệ thống lớn như Spring, Hibernate, Struts.
+- Đối tượng hướng đến
+Dành cho doanh nghiệp, tổ chức cần phát triển ứng dụng web hoặc hệ thống lớn.
+Dùng trong ngân hàng, thương mại điện tử, hệ thống quản lý khách hàng (CRM).
+
+3. Java ME (Micro Edition) – Java thiết bị nhỏ
+- Mục đích sử dụng
+Phát triển ứng dụng cho thiết bị di động cũ (điện thoại Nokia, Sony Ericsson trước đây).
+Dùng trong hệ thống nhúng (Embedded System), thiết bị IoT.
+- Đối tượng hướng đến
+Các nhà phát triển ứng dụng trên thiết bị nhỏ.
+Ứng dụng trong hệ thống nhúng, smart card, thiết bị di động đời cũ.
