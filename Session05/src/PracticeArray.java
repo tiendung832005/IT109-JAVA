@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class PracticeArray {
     public static void main(String[] args) {
         /*
-        * 1. Nhập số phần tử của mảng và khai báo số nguyên 1 chieeuf gồm n phân tử, nhập giá trị các phần tử
-        * 2. Nhập giá trị và chỉ số phần tử chèn vào mảng
-        * */
+         * 1. Nhập số phần tử của mảng và khai báo số nguyên 1 chiều gồm n phần tử, nhập giá trị các phần tử
+         * 2. Nhập giá trị và chỉ số phần tử chèn vào mảng
+         * */
         // 1. Nhập số phần tử, khai báo mảng, nhập giá trị phần tử
 
         Scanner scanner = new Scanner(System.in);
@@ -32,13 +32,13 @@ public class PracticeArray {
                 newArray[i] = oldArray[i];
             }
         }else if(index < oldArray.length){
-            //B1: Khai báo mảng mơ có số phần tử = so phần tử mảng cũ + 1
-             newArray = new int[oldArray.length + 1];
-            //B2: Coppy các phần tử từ old --> new và chenf phần tử vào mảng
+            //B1: Khai báo mảng mới có số phần tử = số phần tử mảng cũ + 1
+            newArray = new int[oldArray.length + 1];
+            //B2: Copy các phần tử từ old --> new và chèn phần tử vào mảng
             for(int i = 0;i < newArray.length;i++){
-                if(i<index){
+                if(i < index){
                     newArray[i] = oldArray[i];
-                } else if (i==index) {
+                } else if (i == index) {
                     newArray[i] = value;
                 } else {
                     newArray[i] = oldArray[i - 1];
@@ -50,7 +50,7 @@ public class PracticeArray {
                 newArray[i] = oldArray[i];
             }
 
-            // Gán giá trị phần tử index vs giá trị value
+            // Gán giá trị phần tử index với giá trị value
             newArray[index] = value;
         }
 
@@ -59,6 +59,43 @@ public class PracticeArray {
         for(int i = 0; i < newArray.length; i++){
             System.out.print(newArray[i] + " ");
         }
+        System.out.println();
 
+        //CẬP NHẬT PHẦN TỬ
+        System.out.print("Nhập chỉ số phần tử muốn cập nhật: ");
+        int updateIndex = Integer.parseInt(scanner.nextLine());
+        if(updateIndex >= 0 && updateIndex < newArray.length){
+            System.out.print("Nhập giá trị mới: ");
+            int updateValue = Integer.parseInt(scanner.nextLine());
+            newArray[updateIndex] = updateValue;
+            System.out.println("Mảng sau khi cập nhật: ");
+            for(int i = 0; i < newArray.length; i++){
+                System.out.print(newArray[i] + " ");
+            }
+            System.out.println();
+        }else{
+            System.out.println("Chỉ số không hợp lệ, không thể cập nhật!");
+        }
+
+        //XÓA PHẦN TỬ
+        System.out.print("Nhập chỉ số phần tử muốn xóa: ");
+        int deleteIndex = Integer.parseInt(scanner.nextLine());
+        int[] finalArray;
+        if(deleteIndex >= 0 && deleteIndex < newArray.length){
+            finalArray = new int[newArray.length - 1];
+            for(int i = 0, j = 0; i < newArray.length; i++){
+                if(i != deleteIndex){
+                    finalArray[j] = newArray[i];
+                    j++;
+                }
+            }
+            System.out.println("Mảng sau khi xóa: ");
+            for(int i = 0; i < finalArray.length; i++){
+                System.out.print(finalArray[i] + " ");
+            }
+            System.out.println();
+        }else{
+            System.out.println("Chỉ số không hợp lệ, không thể xóa!");
+        }
     }
 }
