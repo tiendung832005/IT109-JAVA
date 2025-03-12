@@ -13,7 +13,6 @@ public class Bai8 {
             return;
         }
 
-
         Random random = new Random();
 
         StringBuilder strBuilder = new StringBuilder(n);

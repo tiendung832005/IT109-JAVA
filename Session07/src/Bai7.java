@@ -29,7 +29,6 @@ public class Bai7 {
                     char characterLow = (char) (character + 32);
                     result.append(characterLow);
                 } else {
-
                     result.append(character);
                 }
             }
