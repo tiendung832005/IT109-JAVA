@@ -1,0 +1,109 @@
+package Bai10;
+import java.util.ArrayList;
+public abstract class Employee {
+    protected String name;
+    protected double salary;
+
+    public Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    public abstract void work();
+    public abstract void takeVacation();
+}
+interface AttendMeeting {
+    void attendMeeting();
+}
+class Manager extends Employee implements AttendMeeting {
+
+    public Manager(String name, double salary) {
+        super(name, salary);
+    }
+
+    @Override
+    public void work() {
+        System.out.println("Quản lý " + name + " (Lương: $" + salary + ") đang giám sát dự án");
+    }
+
+    @Override
+    public void takeVacation() {
+        System.out.println("Quản lý " + name + " (Lương: $" + salary + ") đang đi nghỉ phép tại Pháp");
+    }
+
+    @Override
+    public void attendMeeting() {
+        System.out.println("Quản lý " + name + " (Lương: $" + salary + ") đang tham gia cuộc họp");
+    }
+}
+class Developer extends Employee {
+
+    public Developer(String name, double salary) {
+        super(name, salary);
+    }
+
+    @Override
+    public void work() {
+        System.out.println("Lập trình viên " + name + " (Lương $" + salary + ") đang viết code cho hệ thống mới");
+    }
+
+    @Override
+    public void takeVacation() {
+        System.out.println("Lập trình viên " + name + " (Lương $" + salary + ") đang đi nghỉ phép ở Bali");
+    }
+}
+
+
+class Company {
+    private ArrayList<Employee> employees;
+
+    public Company() {
+        employees = new ArrayList<>();
+    }
+
+    public void addEmployee(Employee employee) {
+        employees.add(employee);
+        System.out.println("Đã thêm nhân viên: " + employee.name);
+    }
+
+    public void showAllEmployeesWork() {
+        System.out.println("\nCông việc của các nhân viên");
+        for (Employee e : employees) {
+            e.work();
+        }
+    }
+
+    public void showAllEmployeesVacation() {
+        System.out.println("\nKỳ nghỉ của các nhân viên");
+        for (Employee e : employees) {
+            e.takeVacation();
+        }
+    }
+
+    public void organizeMeeting() {
+        System.out.println("\nTổ chức cuộc họp cho các quản lý");
+        for (Employee e : employees) {
+            if (e instanceof AttendMeeting) {
+                ((AttendMeeting) e).attendMeeting();
+            }
+        }
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Company company = new Company();
+
+        Manager manager = new Manager("Alice", 8000);
+        Developer developer = new Developer("Bob", 5000);
+
+        company.addEmployee(manager);
+        company.addEmployee(developer);
+
+        company.showAllEmployeesWork();
+
+        company.showAllEmployeesVacation();
+
+        company.organizeMeeting();
+    }
+}
+
