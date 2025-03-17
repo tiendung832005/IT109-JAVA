@@ -1,6 +1,5 @@
 package Bai6;
-import java.util.ArrayList;
-import java.util.List;
+
 public abstract class Animal {
     protected String name;
     protected int age;
@@ -21,6 +20,7 @@ public abstract class Animal {
     public abstract void sound();
     public abstract void move();
 }
+
 class Lion extends Animal {
     public Lion(String name, int age) {
         super(name, age);
@@ -36,6 +36,7 @@ class Lion extends Animal {
         System.out.println("The lion is running.");
     }
 }
+
 class Elephant extends Animal {
     public Elephant(String name, int age) {
         super(name, age);
@@ -43,50 +44,58 @@ class Elephant extends Animal {
 
     @Override
     public void sound() {
-        System.out.println("Trumpet!");
+        System.out.println("Trumpet");
     }
 
     @Override
     public void move() {
-        System.out.println("The elephant is walking.");
+        System.out.println("The elephant is walking");
     }
 }
 
 class Zoo {
-    private List<Animal> animals;
+    private Animal[] animals;
+    private int size;
 
     public Zoo() {
-        animals = new ArrayList<>();
+        animals = new Animal[0];
+        size = 0;
     }
 
     public void addAnimal(Animal animal) {
-        animals.add(animal);
+        Animal[] newAnimals = new Animal[size + 1];
+        for (int i = 0; i < size; i++) {
+            newAnimals[i] = animals[i];
+        }
+        newAnimals[size] = animal; // Thêm phần tử mới
+        animals = newAnimals;
+        size++;
     }
 
     public void makeAllSounds() {
         System.out.println("Animal Sound");
-        for (Animal animal : animals) {
-            System.out.print(animal.getName() + " makes sound: ");
-            animal.sound();
+        for (int i = 0; i < size; i++) {
+            System.out.print(animals[i].getName() + " makes sound: ");
+            animals[i].sound();
         }
     }
 
     public void moveAllAnimals() {
         System.out.println("Animal Movement");
-        for (Animal animal : animals) {
-            System.out.print(animal.getName() + " moves: ");
-            animal.move();
+        for (int i = 0; i < size; i++) {
+            System.out.print(animals[i].getName() + " moves: ");
+            animals[i].move();
         }
     }
 
     public void displayAllAnimals() {
         System.out.println("Zoo Animal");
-        for (Animal animal : animals) {
-            System.out.println("Name: " + animal.getName() + ", Age: " + animal.getAge() + ", Type: " + animal.getClass().getSimpleName());
+        for (int i = 0; i < size; i++) {
+            System.out.println("Name: " + animals[i].getName() + ", Age: " + animals[i].getAge() + ", Type: " + animals[i].getClass().getSimpleName());
         }
     }
 }
-// File: Main.java
+
 class Main {
     public static void main(String[] args) {
         Zoo zoo = new Zoo();
@@ -98,9 +107,7 @@ class Main {
         zoo.addAnimal(elephant);
 
         zoo.displayAllAnimals();
-
         zoo.makeAllSounds();
-
         zoo.moveAllAnimals();
     }
 }

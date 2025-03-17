@@ -1,10 +1,9 @@
 package Bai4;
-import java.util.ArrayList;
-import java.util.List;
 public interface Electronic {
     void turnOn();
     void turnOff();
 }
+
 class TV implements Electronic {
     @Override
     public void turnOn() {
@@ -16,6 +15,7 @@ class TV implements Electronic {
         System.out.println("TV đang tắt");
     }
 }
+
 class Radio implements Electronic {
     @Override
     public void turnOn() {
@@ -27,20 +27,22 @@ class Radio implements Electronic {
         System.out.println("Radio đang tắt");
     }
 }
+
 class Main {
     public static void main(String[] args) {
-        List<Electronic> devices = new ArrayList<>();
-        devices.add(new TV());
-        devices.add(new Radio());
+        // Khai báo mảng Electronic
+        Electronic[] devices = new Electronic[2];
+        devices[0] = new TV();
+        devices[1] = new Radio();
 
         System.out.println("Các thiết bị đang bật: ");
-        for (Electronic device : devices) {
-            device.turnOn();
+        for (int i = 0; i < devices.length; i++) {
+            devices[i].turnOn();
         }
 
         System.out.println("\nCác thiết bị đang tắt: ");
-        for (Electronic device : devices) {
-            device.turnOff();
+        for (int i = 0; i < devices.length; i++) {
+            devices[i].turnOff();
         }
     }
 }
