@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Java-KS23B.iml" filepath="$PROJECT_DIR$/.idea/Java-KS23B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOPpractice1/OOPpractice1.iml" filepath="$PROJECT_DIR$/OOPpractice1/OOPpractice1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOPpratice2/OOPpratice2.iml" filepath="$PROJECT_DIR$/OOPpratice2/OOPpratice2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Session01/Session01.iml" filepath="$PROJECT_DIR$/Session01/Session01.iml" />
       <module fileurl="file://$PROJECT_DIR$/Session02/Session02.iml" filepath="$PROJECT_DIR$/Session02/Session02.iml" />
       <module fileurl="file://$PROJECT_DIR$/Session03/Session03.iml" filepath="$PROJECT_DIR$/Session03/Session03.iml" />
@@ -18,6 +20,7 @@
       <module fileurl="file://$PROJECT_DIR$/Session13/Session13.iml" filepath="$PROJECT_DIR$/Session13/Session13.iml" />
       <module fileurl="file://$PROJECT_DIR$/Session14/Session14.iml" filepath="$PROJECT_DIR$/Session14/Session14.iml" />
       <module fileurl="file://$PROJECT_DIR$/Session16/Session16.iml" filepath="$PROJECT_DIR$/Session16/Session16.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Session17/Session17.iml" filepath="$PROJECT_DIR$/Session17/Session17.iml" />
     </modules>
   </component>
 </project>
