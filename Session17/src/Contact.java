@@ -1,5 +1,7 @@
 import java.util.*;
-
+//Dùng equals() để tránh thêm số điện thoại trùng.
+//
+//Dùng HashSet để lưu danh sách liên hệ mà không có trùng lặp.
 class Contact {
     private static int idCounter = 1;
     private int id;

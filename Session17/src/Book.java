@@ -114,7 +114,11 @@ class Library {
         }
     }
 }
-
+//equals() được sử dụng để kiểm tra xem hai sách có cùng id hay không.
+//
+//HashSet dựa vào equals() để đảm bảo không có sách trùng ID.
+//
+//Khi thêm sách, nếu ID đã tồn tại, sách sẽ không được thêm.
  class LibraryManagement {
     public static void main(String[] args) {
         Library library = new Library();
