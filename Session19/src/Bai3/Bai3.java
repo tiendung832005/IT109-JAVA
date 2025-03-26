@@ -13,18 +13,14 @@ public class Bai3 {
         System.out.print("Nhập số thứ hai b: ");
         int b = scanner.nextInt();
 
-        BinaryOperator<Integer> addOperation = MathOperations::add;
-        System.out.println("Phép cộng: " + addOperation.apply(a, b));
+        System.out.println("Phép cộng: " + MathOperations.add(a, b));
 
-        BinaryOperator<Integer> subtractOperation = MathOperations::subtract;
-        System.out.println("Phép trừ: " + subtractOperation.apply(a, b));
+        System.out.println("Phép trừ: " + MathOperations.subtract(a, b));
 
-        BinaryOperator<Integer> multiplyOperation = MathOperations::multiply;
-        System.out.println("Phép nhân: " + multiplyOperation.apply(a, b));
+        System.out.println("Phép nhân: " + MathOperations.multiply(a, b));
 
         try {
-            BinaryOperator<Integer> divideOperation = MathOperations::divide;
-            System.out.println("Phép chia: " + divideOperation.apply(a, b));
+            System.out.println("Phép chia: " + MathOperations.divide(a, b));
         } catch (ArithmeticException e) {
             System.out.println("Lỗi: " + e.getMessage());
         }

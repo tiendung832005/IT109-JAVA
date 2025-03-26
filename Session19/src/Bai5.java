@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -15,9 +16,13 @@ public class Bai5 {
             stringList.add(scanner.nextLine());
         }
 
-        long count = stringList.stream()
-                .filter(s -> s.startsWith("A") && s.length() >= 5)
-                .count();
+
+        int count = 0;
+        for (String s : stringList) {
+            if (s.startsWith("A") && s.length() >= 5) {
+                count++;
+            }
+        }
 
         System.out.println("Số lượng chuỗi thỏa mãn điều kiện: " + count);
         scanner.close();

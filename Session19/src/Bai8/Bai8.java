@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 
 public class Bai8 {
     public static void main(String[] args) {
-
         ListProcessor processor = new ListProcessorImpl();
 
         List<Integer> numbers = new ArrayList<>();
@@ -23,12 +22,15 @@ public class Bai8 {
 
         System.out.println("\nDanh sách có số lẻ: " + processor.checkOdd(numbers));
 
-        List<Integer> oddNumbers = numbers.stream()
-                .filter(num -> num % 2 != 0)
-                .collect(Collectors.toList());
+        List<Integer> oddNumbers = new ArrayList<>();
+        for (Integer num : numbers) {
+            if (num % 2 != 0) {
+                oddNumbers.add(num);
+            }
+        }
         System.out.println("\nCác số lẻ:");
         ListProcessor.printList(oddNumbers);
-        
+
         int sumOdd = processor.sumOddNumbers(numbers);
         System.out.println("\nTổng các số lẻ: " + sumOdd);
     }

@@ -15,17 +15,17 @@ public class Bai9 {
 
         if (processor.hasExpensiveProduct(products)) {
             System.out.println("Sản phẩm đắt tiền:");
-            products.stream()
-                    .filter(product -> product.getPrice() > 100)
-                    .forEach(product -> System.out.println(product.getName() + " - $" + product.getPrice()));
+            for (Product product : products) {
+                if (product.getPrice() > 100) {
+                    System.out.println(product.getName() + " - $" + product.getPrice());
+                }
+            }
         } else {
             System.out.println("Không có sản phẩm đắt tiền");
         }
 
-        // Calculate total value of products
         double totalValue = processor.calculateTotalValue(products);
         System.out.println("\nTổng giá trị sản phẩm: $" + totalValue);
-
 
         ProductProcessor.printProductList(products);
     }

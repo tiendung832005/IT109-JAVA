@@ -1,15 +1,18 @@
-import java.util.List;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Bai1 {
     public static List<String> filterNonEmptyStrings(List<String> inputList) {
-        Predicate<String> nonEmptyPredicate = str -> !str.isEmpty();
+        List<String> nonEmptyStrings = new ArrayList<>();
 
-        return inputList.stream()
-                .filter(nonEmptyPredicate)
-                .collect(Collectors.toList());
+        for (String str : inputList) {
+            if (str != null && !str.trim().isEmpty()) {
+                nonEmptyStrings.add(str);
+            }
+        }
+
+        return nonEmptyStrings;
     }
 
     public static void main(String[] args) {
@@ -18,6 +21,8 @@ public class Bai1 {
         List<String> nonEmptyStrings = filterNonEmptyStrings(strings);
 
         System.out.println("Các chuỗi không rỗng:");
-        nonEmptyStrings.forEach(System.out::println);
+        for (String str : nonEmptyStrings) {
+            System.out.println(str);
+        }
     }
 }
