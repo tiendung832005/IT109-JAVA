@@ -24,7 +24,6 @@ public class Bai3 {
         } catch (ArithmeticException e) {
             System.out.println("Lỗi: " + e.getMessage());
         }
-
         scanner.close();
     }
 }
