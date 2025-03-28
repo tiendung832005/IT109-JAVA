@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Java-KS23B.iml" filepath="$PROJECT_DIR$/.idea/Java-KS23B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java8_Practice/Java8_Practice.iml" filepath="$PROJECT_DIR$/Java8_Practice/Java8_Practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/OOPpractice1/OOPpractice1.iml" filepath="$PROJECT_DIR$/OOPpractice1/OOPpractice1.iml" />
       <module fileurl="file://$PROJECT_DIR$/OOPpratice2/OOPpratice2.iml" filepath="$PROJECT_DIR$/OOPpratice2/OOPpratice2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Session01/Session01.iml" filepath="$PROJECT_DIR$/Session01/Session01.iml" />
